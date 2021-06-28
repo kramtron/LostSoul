@@ -51,10 +51,10 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300f));//Para saltar usando el mismo procedimiento que en el movimiento lateral pero en este caso moviendo el eje y.
         }
 
-        if (LifeManager.lifeManager.Life1())//Es usado para destruir el personaje una vez se muere.
+        /*if (LifeManager.lifeManager.Life1())//Es usado para destruir el personaje una vez se muere.
         {
             Destroy(gameObject);
-        }
+        }*/
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
