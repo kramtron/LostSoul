@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    bool canjump;
+    public bool canjump = false;
+
+    public int jumpF = 300;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && canjump)
         {
             canjump = false;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300f));//Para saltar usando el mismo procedimiento que en el movimiento lateral pero en este caso moviendo el eje y.
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpF));//Para saltar usando el mismo procedimiento que en el movimiento lateral pero en este caso moviendo el eje y.
         }
 
         /*if (LifeManager.lifeManager.Life1())//Es usado para destruir el personaje una vez se muere.
