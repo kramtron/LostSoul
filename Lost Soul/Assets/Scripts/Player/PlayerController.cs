@@ -34,14 +34,14 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.A))
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000f * Time.deltaTime, 0));//Se usa para mover el personaje con fisica. En este caso lo mueves dandole una fuerza.
-            gameObject.GetComponent<Animator>().SetBool("moving", true);//Se usa para activar la animacion del movimiento del personaje.
-            //gameObject.GetComponent<SpriteRenderer>().flipX = true;//Se usa para poder ver al personaje correctamente mientras se mueve hacia la direccion indicada sin que se vea del reves.
+            //gameObject.GetComponent<Animator>().SetBool("moving", true);//Se usa para activar la animacion del movimiento del personaje.
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;//Se usa para poder ver al personaje correctamente mientras se mueve hacia la direccion indicada sin que se vea del reves.
         }
         else if (Input.GetKey(KeyCode.D))
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f * Time.deltaTime, 0));
-            gameObject.GetComponent<Animator>().SetBool("moving", true);
-            //gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            //gameObject.GetComponent<Animator>().SetBool("moving", true);
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
         }
         
