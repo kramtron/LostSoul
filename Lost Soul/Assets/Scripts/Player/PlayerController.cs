@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
             Debug.Log("j");
         }
         // Start is called before the first frame update
-        if (Input.GetKey(KeyCode.A) == Input.GetKey(KeyCode.D)) //si 'a' y 'd' estan las dos presionadas o ninguna, no se mueve
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)) //si 'a' y 'd' estan las dos presionadas o ninguna, no se mueve
         {
-            gameObject.GetComponent<Animator>().SetBool("moving", false);//En el momento en que no pulsas ninguna letra se pone en false y no se hace ninguna animacion "O una animacion de estar parado en caso de tenerla".
+            //gameObject.GetComponent<Animator>().SetBool("moving", false);//En el momento en que no pulsas ninguna letra se pone en false y no se hace ninguna animacion "O una animacion de estar parado en caso de tenerla".
 
         }
           
@@ -35,13 +35,13 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000f * Time.deltaTime, 0));//Se usa para mover el personaje con fisica. En este caso lo mueves dandole una fuerza.
             gameObject.GetComponent<Animator>().SetBool("moving", true);//Se usa para activar la animacion del movimiento del personaje.
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;//Se usa para poder ver al personaje correctamente mientras se mueve hacia la direccion indicada sin que se vea del reves.
+            //gameObject.GetComponent<SpriteRenderer>().flipX = true;//Se usa para poder ver al personaje correctamente mientras se mueve hacia la direccion indicada sin que se vea del reves.
         }
         else if (Input.GetKey(KeyCode.D))
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f * Time.deltaTime, 0));
             gameObject.GetComponent<Animator>().SetBool("moving", true);
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            //gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
         }
         
