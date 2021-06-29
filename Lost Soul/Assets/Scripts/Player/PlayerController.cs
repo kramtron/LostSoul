@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public bool canjump = false;
 
     public int jumpF = 300;
+    public static PlayerController playerController;
+    public bool attack = false;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,10 @@ public class PlayerController : MonoBehaviour
         {
             canjump = false;
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpF));//Para saltar usando el mismo procedimiento que en el movimiento lateral pero en este caso moviendo el eje y.
+        }
+        if (Input.GetKey(KeyCode.K))
+        {
+            attack = true;
         }
 
         /*if (LifeManager.lifeManager.Life1())//Es usado para destruir el personaje una vez se muere.
