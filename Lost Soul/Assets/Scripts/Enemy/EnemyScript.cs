@@ -35,6 +35,7 @@ public class EnemyScript : MonoBehaviour
         if (nearPlayer)
         {
            // gameObject.transform.Translate(0, -5f * Time.deltaTime, 0);
+            //gameObject.transform.Translate(-5f * Time.deltaTime, 0, 0); //es mou cap avall si t'hi apropes
         }
         else
         {
